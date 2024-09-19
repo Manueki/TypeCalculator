@@ -1,0 +1,197 @@
+[
+	{
+		"id": "1",
+		"nombre": "Fuego",
+		"debilidades": [
+			"Agua",
+			"Roca",
+			"Tierra"
+		],
+		"resistencias": [
+			"Planta",
+			"Hielo",
+			"Bicho",
+			"Acero"
+		],
+		"inmunidades": [
+		],
+		"fuerteContra": [
+			"Planta",
+			"Hielo",
+			"Bicho",
+			"Acero"
+		],
+		"debilContra": [
+			"Agua",
+			"Roca",
+			"Tierra"
+		],
+		"inmuneContra": [
+		]
+	},
+	{
+		"id": "2",
+		"nombre": "Agua",
+		"debilidades": [
+			"Planta",
+			"Electrico"
+		],
+		"resistencias": [
+			"Fuego",
+			"Agua",
+			"Hielo",
+			"Acero"
+		],
+		"inmunidades": [
+		],
+		"fuerteContra": [
+			"Fuego",
+			"Tierra",
+			"Roca"
+		],
+		"debilContra": [
+			"Planta",
+			"Electrico"
+		],
+		"inmuneContra": [
+		]
+	},
+	{
+		"id": "3",
+		"nombre": "Planta",
+		"debilidades": [
+			"Fuego",
+			"Hielo",
+			"Veneno",
+			"Volador",
+			"Bicho"
+		],
+		"resistencias": [
+			"Agua",
+			"Electrico",
+			"Planta",
+			"Tierra"
+		],
+		"inmunidades": [
+		],
+		"fuerteContra": [
+			"Agua",
+			"Tierra",
+			"Roca"
+		],
+		"debilContra": [
+			"Fuego",
+			"Hielo",
+			"Volador",
+			"Veneno",
+			"Bicho"
+		],
+		"inmuneContra": [
+		]
+	},
+	{
+		"id": "4",
+		"nombre": "Electrico",
+		"debilidades": [
+			"Tierra"
+		],
+		"resistencias": [
+			"Electrico",
+			"Acero",
+			"Volador"
+		],
+		"inmunidades": [
+		],
+		"fuerteContra": [
+			"Agua",
+			"Volador"
+		],
+		"debilContra": [
+			"Tierra"
+		],
+		"inmuneContra": [
+		]
+	},
+	{
+		"id": "5",
+		"nombre": "Tierra",
+		"debilidades": [
+			"Agua",
+			"Hielo",
+			"Planta"
+		],
+		"resistencias": [
+			"Roca",
+			"Veneno"
+		],
+		"inmunidades": [
+			"Eléctrico"
+		],
+		"fuerteContra": [
+			"Fuego",
+			"Electrico",
+			"Roca",
+			"Veneno",
+			"Acero"
+		],
+		"debilContra": [
+			"Agua",
+			"Hielo",
+			"Planta"
+		],
+		"inmuneContra": [
+		]
+	},
+	{
+		"id": "6",
+		"nombre": "Roca",
+		"debilidades": [
+			"Agua",
+			"Planta",
+			"Tierra",
+			"Acero",
+			"Lucha"
+		],
+		"resistencias": [
+			"Normal",
+			"Fuego",
+			"Veneno",
+			"Volador"
+		],
+		"inmunidades": [
+		],
+		"fuerteContra": [
+			"Fuego",
+			"Volador",
+			"Bicho",
+			"Hielo"
+		],
+		"debilContra": [
+			"Agua",
+			"Planta",
+			"Tierra",
+			"Acero",
+			"Lucha"
+		],
+		"inmuneContra": [
+		]
+	},
+	{
+		"nombre": "Eléctrico",
+		"debilidades": [
+			"Tierra"
+		],
+		"resistencias": [
+			"Eléctrico",
+			"Volador",
+			"Acero"
+		],
+		"fuerteContra": [
+			"Agua",
+			"Volador"
+		],
+		"debilContra": [
+			"Tierra"
+		]
+	}
+]
