@@ -1,0 +1,42 @@
+@charset "ISO-8859-1";
+
+/* BASIC */
+.btn {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+
+.Agua {
+    background-color: #007BFF; /* Azul */
+}
+
+.Fuego {
+    background-color: #FF4500; /* Naranja */
+}
+
+.Planta {
+    background-color: #4CAF50; /* Verde */
+}
+
+.Eléctrico {
+    background-color: #FFD700; /* Amarillo */
+}
+
+.Tierra {
+    background-color: #8B4513; /* Marrón */
+}
+
+.Hielo {
+    background-color: #00CED1; /* Turquesa */
+}
+
+/* Clase para el estado seleccionado */
+.selected {
+    opacity: 0.7;
+    border: 2px solid white; /* Bordes más visibles */
+}
