@@ -5,7 +5,7 @@ import java.util.List;
 
 public class PokemonType {
 
-	private String id;
+	private int id;
 	private String nombre;
 	private List<String> debilidades;
 	private List<String> resistencias;
@@ -22,11 +22,11 @@ public class PokemonType {
 		this.debilContra = new ArrayList<>();
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

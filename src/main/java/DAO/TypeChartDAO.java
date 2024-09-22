@@ -10,26 +10,26 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PokemonTypeDAO {
+public class TypeChartDAO {
 
-	private static final String FILE_PATH = "src/main/resources/typeList.json"; // Ruta del archivo JSON
+	private static final String FILE_PATH = "src/main/resources/typeChart.json"; // Ruta del archivo JSON
 	private static Gson gson = new Gson();
 
-	public static List<PokemonType> recuperarTipos() {
+	public static List<TypeChart> recuperarChart() {
 		try (FileReader reader = new FileReader(FILE_PATH)) {
-			Type tipoLista = new TypeToken<ArrayList<PokemonType>>() {
+			Type chartLista = new TypeToken<ArrayList<TypeChart>>() {
 			}.getType();
-			return gson.fromJson(reader, tipoLista);
+			return gson.fromJson(reader, chartLista);
 		} catch (IOException e) {
 			e.printStackTrace();
 			return new ArrayList<>();
 		}
 	}
-
-	public static PokemonType buscarPorNombre(String nombre) {
-		List<PokemonType> lista = recuperarTipos();
-		for (PokemonType tipo : lista) {
-			if (tipo.getNombre().equalsIgnoreCase(nombre)) {
+	
+	public static TypeChart buscarPorId(int id) {
+		List<TypeChart> lista = recuperarChart();
+		for (TypeChart tipo : lista) {
+			if (tipo.getId()==(id)) {
 				return tipo;
 			}
 		}
