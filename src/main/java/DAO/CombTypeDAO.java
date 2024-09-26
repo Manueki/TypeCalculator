@@ -4,7 +4,6 @@ import java.util.List;
 
 public class CombTypeDAO {
 
-
 	/**
 	 * 
 	 * @param tipo1
@@ -22,10 +21,29 @@ public class CombTypeDAO {
 		calculaDefensiva(tipo1Chart, tipo2Chart, dobletipo, tablaTipos);
 		calculaOfensiva(tipo1Chart, tipo2Chart, dobletipo, tablaTipos);
 
+		return dobletipo;
+
+	}
+
+	/**
+	 * 
+	 * @param tipo1
+	 * @return
+	 */
+	public static CombType crearTipoPuro(PokemonType tipo1) {
+
+		List<TypeChart> tablaTipos = TypeChartDAO.recuperarChart();
+
+		TypeChart tipo1Chart = TypeChartDAO.buscarPorId(tipo1.getId());
+		CombType dobletipo = new CombType(tipo1.getNombre(), tipo1.getNombre());
+
+		calculaDefensiva(tipo1Chart, tipo1Chart, dobletipo, tablaTipos);
+		calculaOfensiva(tipo1Chart, tipo1Chart, dobletipo, tablaTipos);
 
 		return dobletipo;
 
 	}
+
 	/**
 	 * 
 	 * @param tipo1Chart
@@ -37,6 +55,7 @@ public class CombTypeDAO {
 			List<TypeChart> tablaTipos) {
 		Double estado;
 		for (int i = 0; i < 18; i++) {
+
 			estado = (tipo1Chart.getAtaque().get(i) > tipo2Chart.getAtaque().get(i)) ? tipo1Chart.getAtaque().get(i)
 					: tipo2Chart.getAtaque().get(i);
 
@@ -64,7 +83,7 @@ public class CombTypeDAO {
 	}
 
 	/**
-	 * 	
+	 * 
 	 * @param tipo1Chart
 	 * @param tipo2Chart
 	 * @param dobletipo
@@ -75,7 +94,15 @@ public class CombTypeDAO {
 		Double estado;
 
 		for (int i = 0; i < 18; i++) {
-			estado = tipo1Chart.getDefensa().get(i) * tipo2Chart.getDefensa().get(i);
+			if (tipo1Chart.equals(tipo2Chart)) {
+				
+				estado = tipo1Chart.getDefensa().get(i);
+				
+			} else {
+				
+				estado = tipo1Chart.getDefensa().get(i) * tipo2Chart.getDefensa().get(i);
+				
+			}
 			switch (String.valueOf(estado)) {
 
 			case "1.0":
