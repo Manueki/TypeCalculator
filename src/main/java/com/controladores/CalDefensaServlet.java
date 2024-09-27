@@ -38,6 +38,9 @@ public class CalDefensaServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        // Configurar la codificación UTF-8 antes de leer el cuerpo de la solicitud
+        request.setCharacterEncoding("UTF-8");
+        
         // Leer el cuerpo de la solicitud
         StringBuilder stringBuilder = new StringBuilder();
         BufferedReader reader = request.getReader();

@@ -1,61 +1,63 @@
+@charset "ISO-8859-1";
+
 body {
-    background-color: #454545; /* Fondo oscuro */
-    color: #ffffff; /* Texto claro */
-    margin-bottom: 3;
+	background-color: #454545; /* Fondo oscuro */
+	color: #ffffff; /* Texto claro */
+	margin-bottom: 3;
 }
 
 .tituloApp {
 	color: #ffffff;
-	font-weight: bold;	
+	font-weight: bold;
 }
 
 .h2 {
 	color: #ffffff;
-	font-weight: bold;	
+	font-weight: bold;
 }
 
 .h1 {
 	color: #ffffff;
-	font-weight: bold;	
+	font-weight: bold;
 }
 
 .header {
 	margin-bottom: 0;
-    background-color: #1e1e1e; /* Fondo del contenedor */
-    border-radius: 0.5rem; /* Bordes redondeados */
-    padding: 10px; /* Espaciado interno */
+	background-color: #1e1e1e; /* Fondo del contenedor */
+	border-radius: 0.5rem; /* Bordes redondeados */
+	padding: 10px; /* Espaciado interno */
 }
 
 .container {
-    background-color: #696969; /* Fondo del contenedor */
-    border-radius: 0.5rem; /* Bordes redondeados */
-    padding: 20px; /* Espaciado interno */
+	background-color: #696969; /* Fondo del contenedor */
+	border-radius: 0.5rem; /* Bordes redondeados */
+	padding: 20px; /* Espaciado interno */
 }
 
 .nav-link {
-    color: #ffffff; /* Color de texto de los enlaces */
+	color: #ffffff; /* Color de texto de los enlaces */
 }
 
 .nav-link.active {
-    background-color: #007bff; /* Color del enlace activo */
-    color: #ffffff; /* Texto activo claro */
+	background-color: #007bff; /* Color del enlace activo */
+	color: #ffffff; /* Texto activo claro */
 }
 
-
 .btn:hover {
-    background-color: #0056b3; /* Color del bot贸n al pasar el rat贸n */
-    color: #ffffff; /* Texto claro al pasar el rat贸n */
+	background-color: #0056b3; /* Color del bot髇 al pasar el rat髇 */
+	color: #ffffff; /* Texto claro al pasar el rat髇 */
 }
 
 .btn {
-    margin: 5px; /* Espacio entre los botones */
-    padding: 10px; /* Reduce el padding para hacer los botones m谩s estrechos */
-    transition: background-color 0.3s; /* Transici贸n suave para el color de fondo */
-    width: 90%; /* Hace que los botones ocupen el 90% de su contenedor */
-    text-align: center; /* Centra el texto del bot贸n */
+	margin: 5px; /* Espacio entre los botones */
+	padding: 10px;
+	/* Reduce el padding para hacer los botones m醩 estrechos */
+	transition: background-color 0.3s;
+	/* Transici髇 suave para el color de fondo */
+	width: 90%; /* Hace que los botones ocupen el 90% de su contenedor */
+	text-align: center; /* Centra el texto del bot髇 */
 }
 
-/* Aseg煤rate de que los botones ocupen todo el ancho de su columna */
 .w-100 {
-    width: 100%;
+	width: 100%;
 }

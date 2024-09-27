@@ -11,7 +11,7 @@
                 <svg class="bi me-2" width="40" height="32">
                     <use xlink:href="#bootstrap"></use>
                 </svg>
-                <span class="tituloApp">Pokemon Type Calculator    </span>
+                <span class="tituloApp">Pokemon Type Calculator</span>
             </a>
 
             <ul class="nav nav-pills">
@@ -133,29 +133,30 @@
             })
             .then(combType => {
                 // Actualiza la interfaz de usuario con los datos recibidos
-                let output = "Tipo: ";
+                let output = "<br> <div class='row' id='pokemon-types'>";
                 
                 if (combType.tipo2 && combType.tipo2 === combType.tipo1) {
-                    output += generarListaDeTipos([combType.tipo1]);
+                    output += generarListaDeTipos(['<h1>Tipo:</h1>',combType.tipo1]);
                 } else {
-                    output += generarListaDeTipos([combType.tipo1, combType.tipo2]);
+                    output += generarListaDeTipos(['<h1>Tipo:</h1>',combType.tipo1, combType.tipo2]);
                 }
-
+                output += "<br></div>";
+                
                 output += "<div class='row' id='pokemon-types'><div class='col-md-1'></div><div class='col-md-5'>";
-                output += "<br><br>Defensivamente:<br>";
-                output += " <div class='container'> <h2> Sufre x4: </h2><div class='row' id='pokemon-types'>" + generarListaDeTipos(combType.superDebilidades) + "<br></div></div>";
-                output += "<div class='container'> <h2> Sufre x2: </h2><div class='row' id='pokemon-types'>" + generarListaDeTipos(combType.debilidades) + "<br></div></div>";
-                output += "<div class='container'>Daño normal:   <div class='row' id='pokemon-types'>" + generarListaDeTipos(combType.danoNormal) + "<br></div></div>";
-                output += "Resiste x0.5: <div class='container'> <div class='row' id='pokemon-types'>" + generarListaDeTipos(combType.resistencias) + "<br></div></div>";
-                output += "Resiste x0.25: <div class='container'> <div class='row' id='pokemon-types'>" + generarListaDeTipos(combType.superResistencias) + "<br></div></div>";
-                output += "Inmune: <div class='container'> <div class='row' id='pokemon-types'>" + generarListaDeTipos(combType.inmunidades) + "<br></div></div></div>";
+                output += "<br><br><h1>Defensivamente:</h1>";
+                output += "<br><h2>Sufre x2: </h2><div class='container'><div class='row' id='pokemon-types'>" + generarListaDeTipos(combType.superDebilidades) + "<br></div></div>";
+                output += "<br><h2>Sufre x4: </h2><div class='container'><div class='row' id='pokemon-types'>" + generarListaDeTipos(combType.debilidades) + "<br></div></div>";
+                output += "<br><h2>Daño normal: </h2><div class='container'><div class='row' id='pokemon-types'>" + generarListaDeTipos(combType.danoNormal) + "<br></div></div>";
+                output += "<br><h2>Resiste x0.5: </h2><div class='container'> <div class='row' id='pokemon-types'>" + generarListaDeTipos(combType.resistencias) + "<br></div></div>";
+                output += "<br><h2>Resiste x0.25: </h2><div class='container'> <div class='row' id='pokemon-types'>" + generarListaDeTipos(combType.superResistencias) + "<br></div></div>";
+                output += "<br><h2>Inmune: </h2><div class='container'> <div class='row' id='pokemon-types'>" + generarListaDeTipos(combType.inmunidades) + "<br></div></div></div>";
 
                 output += "<div class='col-md-5'>";
-                output += "<br><br>Ofensivamente:<br>";
-                output += "Fuerte contra:  <div class='container'> <div class='row' id='pokemon-types'>" + generarListaDeTipos(combType.fuerteContra) + "<br></div></div>";
-                output += "Débil contra:  <div class='container'> <div class='row' id='pokemon-types'>" + generarListaDeTipos(combType.debilContra) + "<br></div></div>";
-                output += "Inmune contra:  <div class='container'> <div class='row' id='pokemon-types'>" + generarListaDeTipos(combType.inmuneContra) + "<br></div></div>";
-                output += "Normal contra:  <div class='container'> <div class='row' id='pokemon-types'>" + generarListaDeTipos(combType.normalContra) + "<br></div></div></div><div class='col-md-1'></div></div>";
+                output += "<br><br><h1>Ofensivamente:</h1>";
+                output += "<br><h2>Fuerte contra:  </h2><div class='container'> <div class='row' id='pokemon-types'>" + generarListaDeTipos(combType.fuerteContra) + "<br></div></div>";
+                output += "<br><h2>Débil contra:  </h2><div class='container'> <div class='row' id='pokemon-types'>" + generarListaDeTipos(combType.debilContra) + "<br></div></div>";
+                output += "<br><h2>Inmune contra:  </h2><div class='container'> <div class='row' id='pokemon-types'>" + generarListaDeTipos(combType.inmuneContra) + "<br></div></div>";
+                output += "<br><h2>Normal contra:  </h2><div class='container'> <div class='row' id='pokemon-types'>" + generarListaDeTipos(combType.normalContra) + "<br></div></div></div><div class='col-md-1'></div></div>";
 
                 document.getElementById('selected-types').innerHTML = output;
             })
@@ -166,7 +167,7 @@
 
         // Función para generar los botones o spans estilizados con las clases de tipo
         function generarListaDeTipos(tipos) {
-        	if (tipos.length === 0) return "Ninguna";
+        	if (tipos.length === 0) return "No presenta";
 
             return tipos.map(tipo => {
                 if (tipo) { // Asegura que el tipo no sea undefined o null
