@@ -64,9 +64,12 @@ public class CalDefensaServlet extends HttpServlet {
         String tipo1 = jsonObject.has("tipo1") ? jsonObject.get("tipo1").getAsString() : null;
         String tipo2 = jsonObject.has("tipo2") ? jsonObject.get("tipo2").getAsString() : null;
 
-
+        PokemonType tipoPrimario = new PokemonType();
         System.out.print("Tipo: " + tipo1);
-        PokemonType tipoPrimario = PokemonTypeDAO.buscarPorNombre(tipo1);
+        
+        if (tipo1 != null) {
+        	tipoPrimario = PokemonTypeDAO.buscarPorNombre(tipo1);
+        }
         if (tipo2 != null) {
             System.out.println(" " + tipo2);
             PokemonType tipoSecundario = PokemonTypeDAO.buscarPorNombre(tipo2);

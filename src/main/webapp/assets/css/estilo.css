@@ -21,13 +21,6 @@ body {
 	font-weight: bold;
 }
 
-.header {
-	margin-bottom: 0;
-	background-color: #1e1e1e; /* Fondo del contenedor */
-	border-radius: 0.5rem; /* Bordes redondeados */
-	padding: 10px; /* Espaciado interno */
-}
-
 .container {
 	background-color: #696969; /* Fondo del contenedor */
 	border-radius: 0.5rem; /* Bordes redondeados */
@@ -59,5 +52,12 @@ body {
 }
 
 .w-100 {
-	width: 100%;
+	width: 90%;
+}
+
+.header {
+	margin-bottom: 0px;
+	margin-right: 0px;
+	background-color: #1e1e1e; /* Fondo del contenedor */
+	padding: 10px; /* Espaciado interno */
 }

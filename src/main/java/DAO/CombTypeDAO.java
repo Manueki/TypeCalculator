@@ -34,6 +34,10 @@ public class CombTypeDAO {
 
 		List<TypeChart> tablaTipos = TypeChartDAO.recuperarChart();
 
+		if(tipo1 == null)
+		{
+			return null;
+		}
 		TypeChart tipo1Chart = TypeChartDAO.buscarPorId(tipo1.getId());
 		CombType dobletipo = new CombType(tipo1.getNombre(), tipo1.getNombre());
 

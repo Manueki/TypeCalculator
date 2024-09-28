@@ -16,34 +16,29 @@
 }
 
 /* Alineación de la fila de botones */
+#nombreTipos {
+	display: flex;
+	flex-wrap: wrap; /* Permite que los botones se envuelvan */
+	justify-content: flex-start;  /*Alinea los botones al inicio */
+	margin-right: 5%
+}
+
+/* Alineación de la fila de botones */
 #pokemon-types {
 	display: flex;
 	flex-wrap: wrap; /* Permite que los botones se envuelvan */
-	justify-content: flex-start; /* Alinea los botones al inicio */
+	justify-content: flex-start;  /*Alinea los botones al inicio */
 }
 
 /* Estilos para diferentes anchos de pantalla */
 .col-12 {
-	flex: 0 0 calc(16.66% - 2%);
+	flex: 0 0 calc(16.66%);
 	/* 6 columnas por fila (100% / 6 - margen) */
 }
 
-/* Ajustes para menos botones por fila según el ancho */
-@media ( max-width : 1200px) { /* Pantallas anchas */
+@media ( max-width : 1200px) { /* Pantallas pequeñas */
 	.col-12 {
-		flex: 0 0 calc(20% - 2%); /* 5 columnas (100% / 5 - margen) */
-	}
-}
-
-@media ( max-width : 992px) { /* Pantallas medianas */
-	.col-12 {
-		flex: 0 0 calc(25% - 2%); /* 4 columnas (100% / 4 - margen) */
-	}
-}
-
-@media ( max-width : 768px) { /* Pantallas pequeñas */
-	.col-12 {
-		flex: 0 0 calc(33.33% - 2%); /* 3 columnas (100% / 3 - margen) */
+		flex: 0 0 calc(33.33%); /* 3 columnas (100% / 3 - margen) */
 	}
 }
 

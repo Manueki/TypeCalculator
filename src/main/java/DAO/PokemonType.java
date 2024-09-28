@@ -22,6 +22,15 @@ public class PokemonType {
 		this.debilContra = new ArrayList<>();
 	}
 
+	public PokemonType() {
+		// TODO Auto-generated constructor stub
+		this.nombre = "null";
+		this.debilidades = new ArrayList<>();
+		this.resistencias = new ArrayList<>();
+		this.fuerteContra = new ArrayList<>();
+		this.debilContra = new ArrayList<>();
+	}
+
 	public int getId() {
 		return id;
 	}
