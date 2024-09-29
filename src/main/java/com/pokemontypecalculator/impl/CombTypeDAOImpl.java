@@ -1,21 +1,29 @@
-package DAO;
+package com.pokemontypecalculator.impl;
 
 import java.util.List;
 
-public class CombTypeDAO {
+import com.pokemontypecalculator.dao.CombTypeDAO;
+import com.pokemontypecalculator.dao.TypeChartDAO;
+import com.pokemontypecalculator.model.CombType;
+import com.pokemontypecalculator.model.PokemonType;
+import com.pokemontypecalculator.model.TypeChart;
 
-	/**
+public class CombTypeDAOImpl implements CombTypeDAO{
+
+	/** Combina dos tipos para obtener los datos de una combinacion de tipos
 	 * 
 	 * @param tipo1
 	 * @param tipo2
 	 * @return
 	 */
-	public static CombType combinarTipos(PokemonType tipo1, PokemonType tipo2) {
+	public CombType combinarTipos(PokemonType tipo1, PokemonType tipo2) {
 
-		List<TypeChart> tablaTipos = TypeChartDAO.recuperarChart();
+		TypeChartDAO typeChart = new TypeChartDAOImpl();
+		
+		List<TypeChart> tablaTipos = typeChart.recuperarChart();
 
-		TypeChart tipo1Chart = TypeChartDAO.buscarPorId(tipo1.getId());
-		TypeChart tipo2Chart = TypeChartDAO.buscarPorId(tipo2.getId());
+		TypeChart tipo1Chart = typeChart.buscarPorId(tipo1.getId());
+		TypeChart tipo2Chart = typeChart.buscarPorId(tipo2.getId());
 		CombType dobletipo = new CombType(tipo1.getNombre(), tipo2.getNombre());
 
 		calculaDefensiva(tipo1Chart, tipo2Chart, dobletipo, tablaTipos);
@@ -25,20 +33,21 @@ public class CombTypeDAO {
 
 	}
 
-	/**
+	/** Crea una estructura combType con un unico tipo
 	 * 
 	 * @param tipo1
 	 * @return
 	 */
-	public static CombType crearTipoPuro(PokemonType tipo1) {
+	public CombType crearTipoPuro(PokemonType tipo1) {
 
-		List<TypeChart> tablaTipos = TypeChartDAO.recuperarChart();
+		TypeChartDAO typeChart = new TypeChartDAOImpl();
 
-		if(tipo1 == null)
-		{
+		List<TypeChart> tablaTipos = typeChart.recuperarChart();
+
+		if (tipo1 == null) {
 			return null;
 		}
-		TypeChart tipo1Chart = TypeChartDAO.buscarPorId(tipo1.getId());
+		TypeChart tipo1Chart = typeChart.buscarPorId(tipo1.getId());
 		CombType dobletipo = new CombType(tipo1.getNombre(), tipo1.getNombre());
 
 		calculaDefensiva(tipo1Chart, tipo1Chart, dobletipo, tablaTipos);
@@ -48,14 +57,14 @@ public class CombTypeDAO {
 
 	}
 
-	/**
+	/** Calcula la parte ofensiva (cuando ataca)
 	 * 
 	 * @param tipo1Chart
 	 * @param tipo2Chart
 	 * @param dobletipo
 	 * @param tablaTipos
 	 */
-	private static void calculaOfensiva(TypeChart tipo1Chart, TypeChart tipo2Chart, CombType dobletipo,
+	public void calculaOfensiva(TypeChart tipo1Chart, TypeChart tipo2Chart, CombType dobletipo,
 			List<TypeChart> tablaTipos) {
 		Double estado;
 		for (int i = 0; i < 18; i++) {
@@ -86,26 +95,26 @@ public class CombTypeDAO {
 
 	}
 
-	/**
+	/** Calcula la parte defensiva (cuando le atacan)
 	 * 
 	 * @param tipo1Chart
 	 * @param tipo2Chart
 	 * @param dobletipo
 	 * @param tablaTipos
 	 */
-	private static void calculaDefensiva(TypeChart tipo1Chart, TypeChart tipo2Chart, CombType dobletipo,
+	public void calculaDefensiva(TypeChart tipo1Chart, TypeChart tipo2Chart, CombType dobletipo,
 			List<TypeChart> tablaTipos) {
 		Double estado;
 
 		for (int i = 0; i < 18; i++) {
 			if (tipo1Chart.equals(tipo2Chart)) {
-				
+
 				estado = tipo1Chart.getDefensa().get(i);
-				
+
 			} else {
-				
+
 				estado = tipo1Chart.getDefensa().get(i) * tipo2Chart.getDefensa().get(i);
-				
+
 			}
 			switch (String.valueOf(estado)) {
 

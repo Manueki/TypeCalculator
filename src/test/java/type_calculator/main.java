@@ -1,9 +1,11 @@
 package type_calculator;
 
-import DAO.CombType;
-import DAO.CombTypeDAO;
-import DAO.PokemonType;
-import DAO.PokemonTypeDAO;
+import com.pokemontypecalculator.dao.CombTypeDAO;
+import com.pokemontypecalculator.dao.PokemonTypeDAO;
+import com.pokemontypecalculator.impl.CombTypeDAOImpl;
+import com.pokemontypecalculator.impl.PokemonTypeDAOImpl;
+import com.pokemontypecalculator.model.CombType;
+import com.pokemontypecalculator.model.PokemonType;
 
 public class main {
     public static void main(String[] args) {
@@ -23,10 +25,12 @@ public class main {
 //            System.out.println("Tipo Fuego no encontrado.");
 //        }
 //        
+    	PokemonTypeDAO pokemonType = new PokemonTypeDAOImpl();
+    	CombTypeDAO combType = new CombTypeDAOImpl();
         //Crear tipo compuesto
-        PokemonType tipo1 = PokemonTypeDAO.buscarPorNombre("Tierra");
-        PokemonType tipo2 = PokemonTypeDAO.buscarPorNombre("Agua");
-        CombType tipoCompuesto = CombTypeDAO.combinarTipos(tipo1, tipo2);
+        PokemonType tipo1 = pokemonType.buscarPorNombre("Agua");
+        PokemonType tipo2 = pokemonType.buscarPorNombre("Tierra");
+        CombType tipoCompuesto = combType.combinarTipos(tipo1, tipo2);
         tipoCompuesto.mostrarInfo();
     }
 }
