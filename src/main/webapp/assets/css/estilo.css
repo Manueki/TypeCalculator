@@ -1,0 +1,63 @@
+@charset "ISO-8859-1";
+
+body {
+	background-color: #454545; /* Fondo oscuro */
+	color: #ffffff; /* Texto claro */
+	margin-bottom: 3;
+}
+
+.tituloApp {
+	color: #ffffff;
+	font-weight: bold;
+}
+
+.h2 {
+	color: #ffffff;
+	font-weight: bold;
+}
+
+.h1 {
+	color: #ffffff;
+	font-weight: bold;
+}
+
+.container {
+	background-color: #696969; /* Fondo del contenedor */
+	border-radius: 0.5rem; /* Bordes redondeados */
+	padding: 20px; /* Espaciado interno */
+}
+
+.nav-link {
+	color: #ffffff; /* Color de texto de los enlaces */
+}
+
+.nav-link.active {
+	background-color: #007bff; /* Color del enlace activo */
+	color: #ffffff; /* Texto activo claro */
+}
+
+.btn:hover {
+	background-color: #0056b3; /* Color del botón al pasar el ratón */
+	color: #ffffff; /* Texto claro al pasar el ratón */
+}
+
+.btn {
+	margin: 5px; /* Espacio entre los botones */
+	padding: 10px;
+	/* Reduce el padding para hacer los botones más estrechos */
+	transition: background-color 0.3s;
+	/* Transición suave para el color de fondo */
+	width: 90%; /* Hace que los botones ocupen el 90% de su contenedor */
+	text-align: center; /* Centra el texto del botón */
+}
+
+.w-100 {
+	width: 90%;
+}
+
+.header {
+	margin-bottom: 0px;
+	margin-right: 0px;
+	background-color: #1e1e1e; /* Fondo del contenedor */
+	padding: 10px; /* Espaciado interno */
+}

@@ -1,5 +1,26 @@
 [
 	{
+		"id": "0",
+		"nombre": "Normal",
+		"debilidades": [
+			"Lucha"
+		],
+		"resistencias": [
+		],
+		"inmunidades": [
+			"Fantasma"
+		],
+		"fuerteContra": [
+		],
+		"debilContra": [
+			"Roca",
+			"Acero"
+		],
+		"inmuneContra": [
+			"Fantasma"
+		]
+	},
+	{
 		"id": "1",
 		"nombre": "Fuego",
 		"debilidades": [
@@ -34,7 +55,7 @@
 		"nombre": "Agua",
 		"debilidades": [
 			"Planta",
-			"Electrico"
+			"Eléctrico"
 		],
 		"resistencias": [
 			"Fuego",
@@ -51,13 +72,36 @@
 		],
 		"debilContra": [
 			"Planta",
-			"Electrico"
+			"Eléctrico"
 		],
 		"inmuneContra": [
 		]
 	},
 	{
 		"id": "3",
+		"nombre": "Eléctrico",
+		"debilidades": [
+			"Tierra"
+		],
+		"resistencias": [
+			"Eléctrico",
+			"Acero",
+			"Volador"
+		],
+		"inmunidades": [
+		],
+		"fuerteContra": [
+			"Agua",
+			"Volador"
+		],
+		"debilContra": [
+			"Tierra"
+		],
+		"inmuneContra": [
+		]
+	},
+	{
+		"id": "4",
 		"nombre": "Planta",
 		"debilidades": [
 			"Fuego",
@@ -68,7 +112,7 @@
 		],
 		"resistencias": [
 			"Agua",
-			"Electrico",
+			"Eléctrico",
 			"Planta",
 			"Tierra"
 		],
@@ -90,30 +134,94 @@
 		]
 	},
 	{
-		"id": "4",
-		"nombre": "Electrico",
+		"id": "5",
+		"nombre": "Hielo",
 		"debilidades": [
-			"Tierra"
+			"Fuego",
+			"Lucha",
+			"Roca",
+			"Acero"
 		],
 		"resistencias": [
-			"Electrico",
-			"Acero",
-			"Volador"
+			"Hielo"
 		],
 		"inmunidades": [
 		],
 		"fuerteContra": [
-			"Agua",
-			"Volador"
+			"Planta",
+			"Tierra",
+			"Volador",
+			"Dragón"
 		],
 		"debilContra": [
-			"Tierra"
+			"Fuego",
+			"Lucha",
+			"Roca",
+			"Acero"
 		],
 		"inmuneContra": [
 		]
 	},
 	{
-		"id": "5",
+		"id": "6",
+		"nombre": "Lucha",
+		"debilidades": [
+			"Volador",
+			"Psíquico",
+			"Hada"
+		],
+		"resistencias": [
+			"Bicho",
+			"Roca",
+			"Siniestro"
+		],
+		"inmunidades": [
+		],
+		"fuerteContra": [
+			"Normal",
+			"Roca",
+			"Hielo",
+			"Siniestro",
+			"Acero"
+		],
+		"debilContra": [
+			"Veneno",
+			"Volador",
+			"Psíquico",
+			"Bicho"
+		],
+		"inmuneContra": [
+		]
+	},
+	{
+		"id": "7",
+		"nombre": "Veneno",
+		"debilidades": [
+			"Tierra",
+			"Psíquico"
+		],
+		"resistencias": [
+			"Planta",
+			"Lucha",
+			"Veneno",
+			"Bicho",
+			"Hada"
+		],
+		"inmunidades": [
+		],
+		"fuerteContra": [
+			"Planta",
+			"Hada"
+		],
+		"debilContra": [
+			"Tierra",
+			"Psíquico"
+		],
+		"inmuneContra": [
+		]
+	},
+	{
+		"id": "8",
 		"nombre": "Tierra",
 		"debilidades": [
 			"Agua",
@@ -129,7 +237,7 @@
 		],
 		"fuerteContra": [
 			"Fuego",
-			"Electrico",
+			"Eléctrico",
 			"Roca",
 			"Veneno",
 			"Acero"
@@ -140,17 +248,102 @@
 			"Planta"
 		],
 		"inmuneContra": [
+			"Eléctrico"
 		]
 	},
 	{
-		"id": "6",
+		"id": "9",
+		"nombre": "Volador",
+		"debilidades": [
+			"Eléctrico",
+			"Hielo",
+			"Roca"
+		],
+		"resistencias": [
+			"Planta",
+			"Lucha",
+			"Bicho"
+		],
+		"inmunidades": [
+			"Tierra"
+		],
+		"fuerteContra": [
+			"Planta",
+			"Lucha",
+			"Bicho"
+		],
+		"debilContra": [
+			"Eléctrico",
+			"Hielo",
+			"Roca"
+		],
+		"inmuneContra": [
+			"Tierra"
+		]
+	},
+	{
+		"id": "10",
+		"nombre": "Psíquico",
+		"debilidades": [
+			"Bicho",
+			"Fantasma",
+			"Siniestro"
+		],
+		"resistencias": [
+			"Lucha",
+			"Psíquico"
+		],
+		"inmunidades": [
+		],
+		"fuerteContra": [
+			"Lucha",
+			"Veneno"
+		],
+		"debilContra": [
+			"Bicho",
+			"Fantasma",
+			"Siniestro"
+		],
+		"inmuneContra": [
+		]
+	},
+	{
+		"id": "11",
+		"nombre": "Bicho",
+		"debilidades": [
+			"Fuego",
+			"Volador",
+			"Roca"
+		],
+		"resistencias": [
+			"Planta",
+			"Lucha",
+			"Tierra"
+		],
+		"inmunidades": [
+		],
+		"fuerteContra": [
+			"Planta",
+			"Psíquico",
+			"Siniestro"
+		],
+		"debilContra": [
+			"Fuego",
+			"Volador",
+			"Roca"
+		],
+		"inmuneContra": [
+		]
+	},
+	{
+		"id": "12",
 		"nombre": "Roca",
 		"debilidades": [
 			"Agua",
 			"Planta",
+			"Lucha",
 			"Tierra",
-			"Acero",
-			"Lucha"
+			"Acero"
 		],
 		"resistencias": [
 			"Normal",
@@ -169,29 +362,161 @@
 		"debilContra": [
 			"Agua",
 			"Planta",
+			"Lucha",
 			"Tierra",
-			"Acero",
-			"Lucha"
+			"Acero"
 		],
 		"inmuneContra": [
 		]
 	},
 	{
-		"nombre": "Eléctrico",
+		"id": "13",
+		"nombre": "Fantasma",
 		"debilidades": [
+			"Fantasma",
+			"Siniestro"
+		],
+		"resistencias": [
+			"Veneno",
+			"Bicho"
+		],
+		"inmunidades": [
+			"Normal",
+			"Lucha"
+		],
+		"fuerteContra": [
+			"Psíquico",
+			"Fantasma"
+		],
+		"debilContra": [
+			"Fantasma",
+			"Siniestro"
+		],
+		"inmuneContra": [
+			"Normal",
+			"Lucha"
+		]
+	},
+	{
+		"id": "14",
+		"nombre": "Dragón",
+		"debilidades": [
+			"Hielo",
+			"Dragón",
+			"Hada"
+		],
+		"resistencias": [
+			"Fuego",
+			"Agua",
+			"Eléctrico",
+			"Planta"
+		],
+		"inmunidades": [
+		],
+		"fuerteContra": [
+			"Dragón"
+		],
+		"debilContra": [
+			"Acero",
+			"Hielo",
+			"Hada"
+		],
+		"inmuneContra": [
+		]
+	},
+	{
+		"id": "15",
+		"nombre": "Siniestro",
+		"debilidades": [
+			"Lucha",
+			"Bicho",
+			"Hada"
+		],
+		"resistencias": [
+			"Fantasma",
+			"Siniestro"
+		],
+		"inmunidades": [
+			"Psíquico"
+		],
+		"fuerteContra": [
+			"Psíquico",
+			"Fantasma"
+		],
+		"debilContra": [
+			"Lucha",
+			"Bicho",
+			"Hada"
+		],
+		"inmuneContra": [
+			"Psíquico"
+		]
+	},
+	{
+		"id": "16",
+		"nombre": "Acero",
+		"debilidades": [
+			"Fuego",
+			"Lucha",
 			"Tierra"
 		],
 		"resistencias": [
-			"Eléctrico",
+			"Normal",
+			"Planta",
+			"Hielo",
 			"Volador",
-			"Acero"
+			"Psíquico",
+			"Bicho",
+			"Roca",
+			"Dragón",
+			"Acero",
+			"Hada"
+		],
+		"inmunidades": [
+			"Veneno"
 		],
 		"fuerteContra": [
-			"Agua",
-			"Volador"
+			"Hielo",
+			"Roca",
+			"Hada"
 		],
 		"debilContra": [
-			"Tierra"
+			"Fuego",
+			"Agua",
+			"Eléctrico",
+			"Acero"
+		],
+		"inmuneContra": [
+			"Veneno"
+		]
+	},
+	{
+		"id": "17",
+		"nombre": "Hada",
+		"debilidades": [
+			"Veneno",
+			"Acero"
+		],
+		"resistencias": [
+			"Lucha",
+			"Bicho",
+			"Siniestro"
+		],
+		"inmunidades": [
+			"Dragón"
+		],
+		"fuerteContra": [
+			"Lucha",
+			"Dragón",
+			"Siniestro"
+		],
+		"debilContra": [
+			"Fuego",
+			"Veneno",
+			"Acero"
+		],
+		"inmuneContra": [
+			"Dragón"
 		]
 	}
 ]

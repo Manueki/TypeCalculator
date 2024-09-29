@@ -1,0 +1,228 @@
+@charset "ISO-8859-1";
+
+/* Aseguramos que los botones tengan un ancho flexible */
+.btn {
+	flex: 0 1 auto; /* Cambiado para no expandir botones */
+	padding: 5% 0; /* Ajuste del padding para mejor visualización */
+	text-align: center; /* Centrar el texto dentro del botón */
+	margin: 5% 1%;
+	/* Espacio uniforme entre botones (1% arriba/abajo y 1% izquierda/derecha) */
+	box-sizing: border-box;
+	/* Asegura que el padding y el margen no afecten al ancho total */
+	white-space: normal;
+	/* Permitir que el texto se divida en varias líneas si es necesario */
+	color: #ffffff;
+	font-weight: bold;
+}
+
+/* Alineación de la fila de botones */
+#nombreTipos {
+	display: flex;
+	flex-wrap: wrap; /* Permite que los botones se envuelvan */
+	justify-content: flex-start;  /*Alinea los botones al inicio */
+	margin-right: 5%
+}
+
+/* Alineación de la fila de botones */
+#pokemon-types {
+	display: flex;
+	flex-wrap: wrap; /* Permite que los botones se envuelvan */
+	justify-content: flex-start;  /*Alinea los botones al inicio */
+}
+
+/* Estilos para diferentes anchos de pantalla */
+.col-12 {
+	flex: 0 0 calc(16.66%);
+	/* 6 columnas por fila (100% / 6 - margen) */
+}
+
+@media ( max-width : 1200px) { /* Pantallas pequeñas */
+	.col-12 {
+		flex: 0 0 calc(33.33%); /* 3 columnas (100% / 3 - margen) */
+	}
+}
+
+/* Tipos de Pokémon con colores de fondo y bordes */
+.Agua {
+	background-color: #007BFF; /* Azul */
+	border: 4px solid #0056b3; /* Azul más oscuro */
+}
+
+.Agua:hover {
+	background-color: #0056b3; /* Color del botón al pasar el ratón */
+	color: #ffffff; /* Texto claro al pasar el ratón */
+}
+
+.Fuego {
+	background-color: #FF4500; /* Naranja */
+	border: 4px solid #c0392b; /* Naranja más oscuro */
+}
+
+.Fuego:hover {
+	background-color: #c0392b; /* Color del botón al pasar el ratón */
+	color: #ffffff; /* Texto claro al pasar el ratón */
+}
+
+.Planta {
+	background-color: #4CAF50; /* Verde */
+	border: 4px solid #388e3c; /* Verde más oscuro */
+}
+
+.Planta:hover {
+	background-color: #388e3c; /* Color del botón al pasar el ratón */
+	color: #ffffff; /* Texto claro al pasar el ratón */
+}
+
+.Eléctrico {
+	background-color: #FFD700; /* Amarillo */
+	border: 4px solid #b8860b; /* Amarillo más oscuro */
+}
+
+.Eléctrico:hover {
+	background-color: #b8860b; /* Color del botón al pasar el ratón */
+	color: #ffffff; /* Texto claro al pasar el ratón */
+}
+
+.Tierra {
+	background-color: #8B4513; /* Marrón */
+	border: 4px solid #6b4f3a; /* Marrón más oscuro */
+}
+
+.Tierra:hover {
+	background-color: #6b4f3a; /* Color del botón al pasar el ratón */
+	color: #ffffff; /* Texto claro al pasar el ratón */
+}
+
+.Hielo {
+	background-color: #00CED1; /* Turquesa */
+	border: 4px solid #008b8b; /* Turquesa más oscuro */
+}
+
+.Hielo:hover {
+	background-color: #008b8b; /* Color del botón al pasar el ratón */
+	color: #ffffff; /* Texto claro al pasar el ratón */
+}
+
+.Psíquico {
+	background-color: #FF69B4; /* Rosa */
+	border: 4px solid #c71585; /* Rosa más oscuro */
+}
+
+.Psíquico:hover {
+	background-color: #c71585; /* Color del botón al pasar el ratón */
+	color: #ffffff; /* Texto claro al pasar el ratón */
+}
+
+.Roca {
+	background-color: #B8860B; /* Dorado */
+	border: 4px solid #a77b00; /* Dorado más oscuro */
+}
+
+.Roca:hover {
+	background-color: #a77b00; /* Color del botón al pasar el ratón */
+	color: #ffffff; /* Texto claro al pasar el ratón */
+}
+
+.Bicho {
+	background-color: #8BC34A; /* Verde claro */
+	border: 4px solid #6d9c39; /* Verde más oscuro */
+}
+
+.Bicho:hover {
+	background-color: #6d9c39; /* Color del botón al pasar el ratón */
+	color: #ffffff; /* Texto claro al pasar el ratón */
+}
+
+.Siniestro {
+	background-color: rgb(62, 62, 62); /* Índigo */
+	border: 4px solid rgb(0, 0, 0); /* Índigo más oscuro */
+}
+
+.Siniestro:hover {
+	background-color: rgb(0, 0, 0); /* Color del botón al pasar el ratón */
+	color: #ffffff; /* Texto claro al pasar el ratón */
+}
+
+.Hada {
+	background-color: #FFB6C1; /* Rosa claro */
+	border: 4px solid #e69ab6; /* Rosa más oscuro */
+}
+
+.Hada:hover {
+	background-color: #e69ab6; /* Color del botón al pasar el ratón */
+	color: #ffffff; /* Texto claro al pasar el ratón */
+}
+
+.Fantasma {
+	background-color: #663399; /* Púrpura */
+	border: 4px solid #4e2a6c; /* Púrpura más oscuro */
+}
+
+.Fantasma:hover {
+	background-color: #4e2a6c; /* Color del botón al pasar el ratón */
+	color: #ffffff; /* Texto claro al pasar el ratón */
+}
+
+.Acero {
+	background-color: #A9A9A9; /* Gris */
+	border: 4px solid #7f7f7f; /* Gris más oscuro */
+}
+
+.Acero:hover {
+	background-color: #7f7f7f; /* Color del botón al pasar el ratón */
+	color: #ffffff; /* Texto claro al pasar el ratón */
+}
+
+.Lucha {
+	background-color: #DC143C; /* Rojo */
+	border: 4px solid #b01626; /* Rojo más oscuro */
+}
+
+.Lucha:hover {
+	background-color: #b01626; /* Color del botón al pasar el ratón */
+	color: #ffffff; /* Texto claro al pasar el ratón */
+}
+
+.Dragón {
+	background-color: #7038F8; /* Púrpura claro */
+	border: 4px solid #4b00c2; /* Púrpura más oscuro */
+}
+
+.Dragón:hover {
+	background-color: #4b00c2; /* Color del botón al pasar el ratón */
+	color: #ffffff; /* Texto claro al pasar el ratón */
+}
+
+.Normal {
+	background-color: #A8A878; /* Beige/gris */
+	border: 4px solid #6d6d4e; /* Beige más oscuro */
+}
+
+.Normal:hover {
+	background-color: #6d6d4e; /* Color del botón al pasar el ratón */
+	color: #ffffff; /* Texto claro al pasar el ratón */
+}
+
+.Veneno {
+	background-color: #A040A0; /* Violeta */
+	border: 4px solid #6e2d6e; /* Violeta más oscuro */
+}
+
+.Veneno:hover {
+	background-color: #6e2d6e; /* Color del botón al pasar el ratón */
+	color: #ffffff; /* Texto claro al pasar el ratón */
+}
+
+.Volador {
+	background-color: #87CEEB; /* Cielo */
+	border: 4px solid #6da8d3; /* Cielo más oscuro */
+}
+
+.Volador:hover {
+	background-color: #6da8d3; /* Color del botón al pasar el ratón */
+	color: #ffffff; /* Texto claro al pasar el ratón */
+}
+
+.btn.selected {
+	background-color: #555555; /* Azul más oscuro */
+}
