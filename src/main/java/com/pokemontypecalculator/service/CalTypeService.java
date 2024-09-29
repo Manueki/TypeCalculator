@@ -22,21 +22,27 @@ public class CalTypeService {
     public String calcularTiposEnJSON(String tipo1, String tipo2) {
         // Buscar el primer tipo por nombre
     	
+    	
+        CombType tipoComb = null;
+        
     	PokemonTypeDAO pokemonType = new PokemonTypeDAOImpl();
     	CombTypeDAO combType = new CombTypeDAOImpl();
     	
-        PokemonType tipoPrimario = pokemonType.buscarPorNombre(tipo1);
-
-        CombType tipoComb;
-
-        // Si hay un segundo tipo, hacer la combinación
-        if (tipo2 != null && !tipo2.isEmpty()) {
+        PokemonType tipoPrimario = new PokemonType();
+        System.out.print("Tipo: " + tipo1);
+        
+        if (tipo1 != null) {
+        	tipoPrimario = pokemonType.buscarPorNombre(tipo1);
+        }
+        if (tipo2 != null) {
+            System.out.println(" " + tipo2);
             PokemonType tipoSecundario = pokemonType.buscarPorNombre(tipo2);
             tipoComb = combType.combinarTipos(tipoPrimario, tipoSecundario);
         } else {
             // Si solo hay un tipo, crear un tipo puro
             tipoComb = combType.crearTipoPuro(tipoPrimario);
         }
+        
 
         // Convertir el resultado en JSON y devolverlo
         return gson.toJson(tipoComb);

@@ -1,89 +1,260 @@
 <html>
 <head>
-    <%@include file="configuracionesHead.jspf"%>
-    <%@ page import="com.pokemontypecalculator.model.CombType"%>
-    <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
+<%@include file="configuracionesHead.jspf"%>
+<%@ page import="com.pokemontypecalculator.model.CombType"%>
+<link rel="stylesheet" href="styles.css">
+<!-- Enlace al archivo CSS -->
+
 </head>
 <body>
-    <div class="header">
-        <header class="d-flex flex-wrap justify-content-center mt-1 mb-0">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                <svg class="bi me-2" width="40" height="32">
+	<div class="header">
+		<header class="d-flex flex-wrap justify-content-center mt-1 mb-0">
+			<a href="/"
+				class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+				<svg class="bi me-2" width="40" height="32">
                     <use xlink:href="#bootstrap"></use>
-                </svg>
-                <span class="tituloApp">Pokemon Type Calculator</span>
-            </a>
+                </svg> <span class="tituloApp">Pokemon Type Calculator</span>
+			</a>
 
-            <ul class="nav nav-pills">
-                <li class="nav-item"><a href="/type_calculator" class="nav-link active" aria-current="page">Calculadora</a></li>
-               <!-- <li class="nav-item"><a href="#" class="nav-link">Configuración</a></li> --> 
-                <li class="nav-item"><a href="/type_calculator/versiones" class="nav-link">Versiones</a></li>
-            </ul>
-        </header>
-    </div>
-    <h1> &emsp; Elige hasta dos tipos de Pokémon</h1>
-    <div class="container mt-4">
-    
-    <div class="row" id="pokemon-types">
-        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <button class="btn Normal w-100 text-truncate" onclick="selectType('Normal', event)">Normal</button>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <button class="btn Fuego w-100 text-truncate" onclick="selectType('Fuego', event)">Fuego</button>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <button class="btn Agua w-100 text-truncate" onclick="selectType('Agua', event)">Agua</button>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <button class="btn Eléctrico w-100 text-truncate" onclick="selectType('Eléctrico', event)">Eléctrico</button>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <button class="btn Planta w-100 text-truncate" onclick="selectType('Planta', event)">Planta</button>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <button class="btn Hielo w-100 text-truncate" onclick="selectType('Hielo', event)">Hielo</button>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <button class="btn Lucha w-100 text-truncate" onclick="selectType('Lucha', event)">Lucha</button>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <button class="btn Veneno w-100 text-truncate" onclick="selectType('Veneno', event)">Veneno</button>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <button class="btn Tierra w-100 text-truncate" onclick="selectType('Tierra', event)">Tierra</button>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <button class="btn Volador w-100 text-truncate" onclick="selectType('Volador', event)">Volador</button>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <button class="btn Psíquico w-100 text-truncate" onclick="selectType('Psíquico', event)">Psíquico</button>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <button class="btn Bicho w-100 text-truncate" onclick="selectType('Bicho', event)">Bicho</button>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <button class="btn Roca w-100 text-truncate" onclick="selectType('Roca', event)">Roca</button>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <button class="btn Fantasma w-100 text-truncate" onclick="selectType('Fantasma', event)">Fantasma</button>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <button class="btn Dragón w-100 text-truncate" onclick="selectType('Dragón', event)">Dragón</button>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <button class="btn Siniestro w-100 text-truncate" onclick="selectType('Siniestro', event)">Siniestro</button>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <button class="btn Acero w-100 text-truncate" onclick="selectType('Acero', event)">Acero</button>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-2">
-            <button class="btn Hada w-100 text-truncate" onclick="selectType('Hada', event)">Hada</button>
-        </div>
-    </div>
+			<ul class="nav nav-pills">
+				<li class="nav-item"><a href="/type_calculator"
+					class="nav-link active" aria-current="page">Calculadora</a></li>
+				<!-- <li class="nav-item"><a href="#" class="nav-link">Configuración</a></li> -->
+				<li class="nav-item"><a href="/type_calculator/versiones"
+					class="nav-link">Versiones</a></li>
+			</ul>
+			<script>
+        // Función para cargar los Pokémon usando PokeAPI y ordenarlos alfabéticamente
+        async function cargarPokemon() {
+            try {
+                const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=1200');
+                const data = await response.json();
+                
+                // Ordenar los resultados alfabéticamente
+                const pokemonOrdenado = data.results.sort((a, b) => {
+                    return a.name.localeCompare(b.name);
+                });
+
+                // Seleccionar el dropdown en el HTML
+                const pokemonDropdown = document.getElementById("pokemon");
+
+                // Iterar sobre los resultados ordenados y agregar opciones al dropdown
+                pokemonOrdenado.forEach(pokemon => {
+                    let option = document.createElement("option");
+                    option.value = pokemon.name;
+                    option.text = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
+                    pokemonDropdown.appendChild(option);
+                });
+            } catch (error) {
+                console.error("Error al cargar los Pokémon: ", error);
+            }
+        }
+
+        function traducirTipo(tipoIngles) {
+    	    let tipoEspanol;
+    	    switch (tipoIngles.toLowerCase()) {  // Convertimos el tipo a minúsculas para asegurar coincidencias
+    	        case 'normal':
+    	            tipoEspanol = 'Normal';
+    	            break;
+    	        case 'fire':
+    	            tipoEspanol = 'Fuego';
+    	            break;
+    	        case 'water':
+    	            tipoEspanol = 'Agua';
+    	            break;
+    	        case 'electric':
+    	            tipoEspanol = 'Eléctrico';
+    	            break;
+    	        case 'grass':
+    	            tipoEspanol = 'Planta';
+    	            break;
+    	        case 'ice':
+    	            tipoEspanol = 'Hielo';
+    	            break;
+    	        case 'fighting':
+    	            tipoEspanol = 'Lucha';
+    	            break;
+    	        case 'poison':
+    	            tipoEspanol = 'Veneno';
+    	            break;
+    	        case 'ground':
+    	            tipoEspanol = 'Tierra';
+    	            break;
+    	        case 'flying':
+    	            tipoEspanol = 'Volador';
+    	            break;
+    	        case 'psychic':
+    	            tipoEspanol = 'Psíquico';
+    	            break;
+    	        case 'bug':
+    	            tipoEspanol = 'Bicho';
+    	            break;
+    	        case 'rock':
+    	            tipoEspanol = 'Roca';
+    	            break;
+    	        case 'ghost':
+    	            tipoEspanol = 'Fantasma';
+    	            break;
+    	        case 'dragon':
+    	            tipoEspanol = 'Dragón';
+    	            break;
+    	        case 'dark':
+    	            tipoEspanol = 'Siniestro';
+    	            break;
+    	        case 'steel':
+    	            tipoEspanol = 'Acero';
+    	            break;
+    	        case 'fairy':
+    	            tipoEspanol = 'Hada';
+    	            break;
+    	        default:
+    	            tipoEspanol = 'null';
+    	    }
+    	    return tipoEspanol;
+    	}
+        
+     // Función para mostrar el Pokémon seleccionado y su tipo
+        async function mostrarPokemonSeleccionado() {
+            const pokemonSeleccionado = document.getElementById("pokemon").value;
+            const resultadoDiv = document.getElementById("resultado");
+
+            if (pokemonSeleccionado) {
+                try {
+                    // Hacer otra solicitud para obtener los detalles del Pokémon seleccionado
+                    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonSeleccionado}`);
+                    const data = await response.json();
+                    
+                    let selectedTypes = [];
+                    
+                    // Obtener los tipos del Pokémon y almacenarlos en variables
+                    let tipo1 = null;
+                    let tipo2 = null;
+
+                    if (data.types.length > 0) {
+                        selectedTypes.push(traducirTipo(data.types[0].type.name)); // Primer tipo
+                    }
+                    if (data.types.length > 1) {
+                        selectedTypes.push(traducirTipo(data.types[1].type.name)); // Segundo tipo (si lo tiene)
+                    }
+                    
+                    mostrarImagen(data.sprites.front_default);
+                    enviarTipos(selectedTypes);
+                    
+                } catch (error) {
+                    console.error("Error al obtener detalles del Pokémon: ", error);
+                    resultadoDiv.innerHTML = `<p>Error al cargar los detalles del Pokémon.</p>`;
+                }
+            } else {
+                resultadoDiv.innerHTML = "<p>No has seleccionado ningún Pokémon.</p>";
+            }
+        }
+
+        // Cargar Pokémon cuando el documento está listo
+        document.addEventListener("DOMContentLoaded", cargarPokemon);
+
+    </script>
+		</header>
 	</div>
-    <p id="selected-types"></p>
+	<h1>&emsp; Elige hasta dos tipos de Pokémon</h1>
+	<div class="container mt-4">
 
-    <script>
+		<div class="row" id="pokemon-types">
+			<div class="col-12 col-sm-6 col-md-4 col-lg-2">
+				<button class="btn Normal w-100 text-truncate"
+					onclick="selectType('Normal', event)">Normal</button>
+			</div>
+			<div class="col-12 col-sm-6 col-md-4 col-lg-2">
+				<button class="btn Fuego w-100 text-truncate"
+					onclick="selectType('Fuego', event)">Fuego</button>
+			</div>
+			<div class="col-12 col-sm-6 col-md-4 col-lg-2">
+				<button class="btn Agua w-100 text-truncate"
+					onclick="selectType('Agua', event)">Agua</button>
+			</div>
+			<div class="col-12 col-sm-6 col-md-4 col-lg-2">
+				<button class="btn Eléctrico w-100 text-truncate"
+					onclick="selectType('Eléctrico', event)">Eléctrico</button>
+			</div>
+			<div class="col-12 col-sm-6 col-md-4 col-lg-2">
+				<button class="btn Planta w-100 text-truncate"
+					onclick="selectType('Planta', event)">Planta</button>
+			</div>
+			<div class="col-12 col-sm-6 col-md-4 col-lg-2">
+				<button class="btn Hielo w-100 text-truncate"
+					onclick="selectType('Hielo', event)">Hielo</button>
+			</div>
+			<div class="col-12 col-sm-6 col-md-4 col-lg-2">
+				<button class="btn Lucha w-100 text-truncate"
+					onclick="selectType('Lucha', event)">Lucha</button>
+			</div>
+			<div class="col-12 col-sm-6 col-md-4 col-lg-2">
+				<button class="btn Veneno w-100 text-truncate"
+					onclick="selectType('Veneno', event)">Veneno</button>
+			</div>
+			<div class="col-12 col-sm-6 col-md-4 col-lg-2">
+				<button class="btn Tierra w-100 text-truncate"
+					onclick="selectType('Tierra', event)">Tierra</button>
+			</div>
+			<div class="col-12 col-sm-6 col-md-4 col-lg-2">
+				<button class="btn Volador w-100 text-truncate"
+					onclick="selectType('Volador', event)">Volador</button>
+			</div>
+			<div class="col-12 col-sm-6 col-md-4 col-lg-2">
+				<button class="btn Psíquico w-100 text-truncate"
+					onclick="selectType('Psíquico', event)">Psíquico</button>
+			</div>
+			<div class="col-12 col-sm-6 col-md-4 col-lg-2">
+				<button class="btn Bicho w-100 text-truncate"
+					onclick="selectType('Bicho', event)">Bicho</button>
+			</div>
+			<div class="col-12 col-sm-6 col-md-4 col-lg-2">
+				<button class="btn Roca w-100 text-truncate"
+					onclick="selectType('Roca', event)">Roca</button>
+			</div>
+			<div class="col-12 col-sm-6 col-md-4 col-lg-2">
+				<button class="btn Fantasma w-100 text-truncate"
+					onclick="selectType('Fantasma', event)">Fantasma</button>
+			</div>
+			<div class="col-12 col-sm-6 col-md-4 col-lg-2">
+				<button class="btn Dragón w-100 text-truncate"
+					onclick="selectType('Dragón', event)">Dragón</button>
+			</div>
+			<div class="col-12 col-sm-6 col-md-4 col-lg-2">
+				<button class="btn Siniestro w-100 text-truncate"
+					onclick="selectType('Siniestro', event)">Siniestro</button>
+			</div>
+			<div class="col-12 col-sm-6 col-md-4 col-lg-2">
+				<button class="btn Acero w-100 text-truncate"
+					onclick="selectType('Acero', event)">Acero</button>
+			</div>
+			<div class="col-12 col-sm-6 col-md-4 col-lg-2">
+				<button class="btn Hada w-100 text-truncate"
+					onclick="selectType('Hada', event)">Hada</button>
+			</div>
+		</div>
+	</div>
+
+	<h1>Selecciona tu Pokémon</h1>
+	<!-- Formulario para elegir un Pokémon -->
+	<form id="pokemonForm"
+		onsubmit="event.preventDefault(); mostrarPokemonSeleccionado();">
+		<label for="pokemon">Elige un Pokémon:</label> <select id="pokemon"
+			name="pokemon">
+			<option value="">--Selecciona un Pokémon--</option>
+			<!-- Las opciones serán llenadas dinámicamente por JavaScript -->
+		</select> <br>
+		<br> <input type="submit" value="Mostrar">
+	</form>
+
+	<!-- Div donde se mostrará el resultado -->
+	<div id="resultado"></div>
+	<img id="pokemonImg">	
+	<p id="selected-types"></p>
+<body>
+
+
+	<!-- SCRIPT ELEGIR TIPOS -->
+	<script>
         let selectedTypes = [];
 
         function selectType(type, event) {
@@ -116,7 +287,7 @@
         dataToSend = { tipo1: selectedTypes[0], tipo2: selectedTypes[1] };
     }
 
-    fetch('/type_calculator/calDefensa', {
+    fetch('/type_calculator/calType', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -181,5 +352,15 @@
             }).join(' ');
         }
     </script>
+    <script>
+    function mostrarImagen(url) {
+        // Crear un nuevo elemento de imagen
+        const imagen = document.getElementById("pokemonImg");
+
+        // Establecer la fuente de la imagen a la URL proporcionada
+        imagen.src = url;
+    }
+    </script>
+
 </body>
 </html>
