@@ -1,4 +1,4 @@
-package com.pokemontypecalculator.model;
+package DAO;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,7 @@
 <html>
 <head>
     <%@include file="configuracionesHead.jspf"%>
-    <%@ page import="com.pokemontypecalculator.model.CombType"%>
+    <%@ page import="DAO.CombType"%>
     <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
 </head>
 <body>
@@ -15,9 +15,9 @@
             </a>
 
             <ul class="nav nav-pills">
-                <li class="nav-item"><a href="/type_calculator" class="nav-link active" aria-current="page">Calculadora</a></li>
-               <!-- <li class="nav-item"><a href="#" class="nav-link">Configuración</a></li> --> 
-                <li class="nav-item"><a href="/type_calculator/versiones" class="nav-link">Versiones</a></li>
+                <li class="nav-item"><a href="/type_calculator/index.jsp" class="nav-link active" aria-current="page">Calculadora</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Configuración</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Info</a></li>
             </ul>
         </header>
     </div>

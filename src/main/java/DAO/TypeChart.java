@@ -1,4 +1,4 @@
-package com.pokemontypecalculator.model;
+package DAO;
 
 import java.util.List;
 
@@ -8,6 +8,13 @@ public class TypeChart {
 	private String nombre;
 	private List<Double> defensa;
 	private List<Double> ataque;
+
+	public TypeChart(int id, String nombre, List<Double> defensa, List<Double> ataque) {
+		this.id = id;
+		this.nombre = nombre;
+		this.defensa = defensa;
+		this.ataque = ataque;
+	}
 
 	public int getId() {
 		return id;
@@ -41,10 +48,4 @@ public class TypeChart {
 		this.ataque = ataque;
 	}
 
-	public TypeChart(int id, String nombre, List<Double> defensa, List<Double> ataque) {
-		this.id = id;
-		this.nombre = nombre;
-		this.defensa = defensa;
-		this.ataque = ataque;
-	}
 }
